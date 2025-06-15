@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <title>Respuesta del modelo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #e9f7ef;
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            width: 600px;
+            text-align: center;
+        }
+        h1 {
+            color: #2e7d32;
+            margin-bottom: 1rem;
+        }
+        .question {
+            font-weight: bold;
+            color: #1b5e20;
+            margin-bottom: 1rem;
+        }
+        .answer {
+            white-space: pre-wrap;
+            font-size: 1.1rem;
+            color: #333;
+            border-left: 4px solid #4caf50;
+            padding-left: 1rem;
+            margin-bottom: 1rem;
+        }
+        a {
+            display: block;
+            margin-top: 2rem;
+            text-decoration: none;
+            color: #007bff;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        audio {
+            margin-top: 1rem;
+            width: 100%;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Respuesta del modelo</h1>
+        <div class="question">Pregunta: {{ question }}</div>
+        <div class="answer">{{ answer }}</div>
+        <audio controls>
+            <source src="{{ audio_url }}" type="audio/wav" />
+            Tu navegador no soporta el elemento de audio.
+        </audio>
+        <a href="/">← Hacer otra pregunta</a>
+    </div>
+</body>
+</html>
