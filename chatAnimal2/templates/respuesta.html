@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <title>Respuesta en audio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f8ff;
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            width: 600px;
+            text-align: center;
+        }
+        h1 {
+            color: #1e90ff;
+        }
+        .question {
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        audio {
+            margin-top: 1rem;
+            width: 100%;
+            outline: none;
+        }
+        a {
+            display: block;
+            margin-top: 2rem;
+            text-decoration: none;
+            color: #007bff;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Respuesta en Audio</h1>
+        <div class="question">Pregunta: {{ question }}</div>
+        <audio controls>
+            <source src="{{ url_for('static', filename=audio_file) }}" type="audio/wav" />
+            Tu navegador no soporta audio.
+        </audio>
+        <a href="/">← Hacer otra pregunta</a>
+    </div>
+</body>
+</html>
