@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <title>Pregunta al modelo</title>
+    <link href="/chatAnimal4/style/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Haz tu pregunta</h1>
+        <form action="/respuesta" method="post" enctype="multipart/form-data">
+            <label for="question">Pregunta:</label>
+            <input type="text" id="question" name="question" placeholder="Escribe tu pregunta aquí" required />
+
+            <label for="image">Selecciona una imagen:</label>
+            <input type="file" id="image" name="image" accept="image/*" required />
+
+            <input type="submit" value="Enviar pregunta" />
+        </form>
+    </div>
+</body>
+</html>
