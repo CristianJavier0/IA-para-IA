@@ -12,7 +12,7 @@ client = Groq(api_key="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"
 # Ruta principal del sitio: se accede con un GET (cuando el usuario entra a la página)
 @app.route("/", methods=["GET"])
 def pregunta():
-    return render_template("pregunta.html")  # Renderiza y muestra la plantilla HTML llamada "pregunta.html"
+    return render_template("index.html")  # Renderiza y muestra la plantilla HTML llamada "indexhtml"
 
 # Ruta que se activa cuando el formulario se envía (método POST)
 @app.route("/respuesta", methods=["POST"])
