@@ -13,11 +13,10 @@ def pregunta():
 
 @app.route("/respuesta", methods=["POST"])
 def respuesta():
-    question = request.form.get("question")
     image_file = request.files.get("image")
 
-    if not question or not image_file or image_file.filename == "":
-        return "Faltan datos de la pregunta o la imagen", 400
+    if not image_file or image_file.filename == "":
+        return "Faltan datos de la imagen", 400
 
     encoded_image = base64.b64encode(image_file.read()).decode("utf-8")
     image_data_url = f"data:{image_file.content_type};base64,{encoded_image}"
@@ -28,7 +27,7 @@ def respuesta():
             "content": [
                 {
                     "type": "text",
-                    "text": question
+                    "text": "¿El elemento de la foto se come? ¿Si se come en donde esta permitido y en donde no? y limitala a 1100 caracteres",
                 },
                 {
                     "type": "image_url",
@@ -67,7 +66,7 @@ def respuesta():
     # URL para acceder al audio desde el navegador
     audio_url = url_for('static', filename='speech.wav')
 
-    return render_template("respuesta.html", question=question, answer=answer, audio_url=audio_url)
+    return render_template("respuesta.html", answer=answer, audio_url=audio_url)
 
 if __name__ == "__main__":
     app.run(debug=True)

@@ -5,7 +5,7 @@ from pathlib import Path
 
 app = Flask(__name__)
 
-client = Groq(api_key="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")
+client = Groq(api_key="gsk_qN1TRl9omwY3Tg20S2PdWGdyb3FYnb7W1unLZlPvVWZk1dEzIYqqD")
 
 @app.route("/", methods=["GET"])
 def pregunta():
@@ -45,7 +45,7 @@ def respuesta():
         model="meta-llama/llama-4-scout-17b-16e-instruct",
         messages=messages,
         temperature=1,
-        max_completion_tokens=1024,
+        max_completion_tokens=500,
         top_p=1,
         stream=False,
         stop=None,
@@ -57,8 +57,8 @@ def respuesta():
     speech_path.parent.mkdir(exist_ok=True)  # Crear carpeta static si no existe
 
     response_audio = client.audio.speech.create(
-        model="playai-tts",
-        voice="Mikail-PlayAI",
+        model="playai-tts-arabic",
+        voice="Nasser-PlayAI",
         response_format="wav",
         input=answer,
     )

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Respuesta del modelo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #aaa6a6;
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            background: rgb(0, 0, 0);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgb(216, 2, 134, 1);
+            width: 400px;
+        }
+        h1 {
+            color: #d80286;
+            margin-bottom: 1rem;
+        }
+        .answer {
+            white-space: pre-wrap;
+            font-size: 1.1rem;
+            color: #ffffff;
+            border-left: 4px solid #d80286;
+            box-shadow: 0 0 15px rgb(216, 2, 134, 1);
+            padding-left: 1rem;
+            margin-bottom: 1rem;
+        }
+        a {
+            display: block;
+            margin-top: 2rem;
+            text-decoration: none;
+            color: #d80286;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        audio {
+            margin-top: 1rem;
+            width: 100%;
+            outline: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgb(216, 2, 134,1);
+            background-color: #000000;
+            padding: 8px;
+            transition: box-shadow 0.3s ease, transform 0.2s ease;
+            color: #d80286;
+        }
+
+        audio:hover {
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+            transform: scale(1.01);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Respuesta del modelo</h1>
+        <div class="answer">{{ answer }}</div>
+
+        <audio controls>
+            <source src="{{ audio_url }}" type="audio/wav" />
+            Tu navegador no soporta el elemento de audio.
+        </audio>
+
+        <a href="/">← Hacer otra pregunta</a>
+
+    </div>
+</body>
+</html>
