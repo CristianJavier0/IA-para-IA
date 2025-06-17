@@ -7,7 +7,7 @@ from pathlib import Path  # Para manejar rutas de archivos de forma segura
 app = Flask(__name__)  # Crea la instancia de la aplicación Flask
 
 # Inicializa el cliente de Groq con tu API key
-client = Groq(api_key="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")
+client = Groq(api_key="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")
 
 # Ruta principal del sitio: se accede con un GET (cuando el usuario entra a la página)
 @app.route("/", methods=["GET"])
@@ -36,7 +36,7 @@ def respuesta():
             "content": [
                 {
                     "type": "text",  # Primer tipo de contenido: texto
-                    "text": "¿El elemento de la foto se come? ¿Si se come en donde esta permitido y en donde no? y limitala a 500 caracteres"
+                    "text": "Analiza la imagen y responde: ¿El alimento que aparece es apto para el consumo humano? ¿Es legal en todos los países? Explica brevemente su procedencia, riesgos y aceptación cultural máximo 500 caracteres. Si no puedes identificarlo, intenta describir lo que hay en la imagen y explica por qué no sería comestible máximo 250 caracteres."
                     # Pregunta que se le hará al modelo, indicando que debe limitarse a 500 caracteres
                 },
                 {

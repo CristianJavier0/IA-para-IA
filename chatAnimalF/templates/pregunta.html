@@ -6,11 +6,11 @@
     <title>Pregunta al modelo</title>
     <style>
         html {
-            height: 100%;
+            height: 90%;
         }
 
         body {
-            font-family: Arial, sans-serif;
+            font-family: monospace;
             background: #aaa6a6;
             padding: 2rem;
             display: flex;
@@ -38,6 +38,11 @@
             margin-bottom: 1.5rem;
             text-align: center;
         }
+        h4 {
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
         label {
             display: block;
             margin-bottom: 0.5rem;
@@ -60,7 +65,7 @@
             border-radius: 6px;
             padding: 18px 36px;
             display: inline-block;
-            font-family: "Lucida Console", Monaco, monospace;
+            font-family: "Lucida Console";
             font-size: 1rem;
             letter-spacing: 1px;
             width: 100%;
@@ -80,9 +85,13 @@
 <body>
 
     <div class="container">
-        <h1>Ingrese una imagen con terminacion .png</h1>
-        <h2>Para saber si el contenido de la imagen es comestible o no, en donde y si es legal su consumo</h2>
-        <h3>Al final una voz le dira su respuesta o directamente la puede leer :)</h3>
+        <h1>Bienvenido a nuestra IA CHUPAPI</h1>
+        <h2>1. Ingrese una imagen con terminacion .png que no pese mas de 2 mb </h2>
+        <h3>2. La IA va a analizar el alimento mostrado en la imagen para saber si:</h3>
+        <h4>2.1 Es apto para consumo humano</h4>
+        <h4>2.2 Su consumo es legal en todos los países</h4>
+        <h4>2.3 Explica brevemente su procedencia, sus riesgos y aceptacion cultural</h4>
+        <h3>3. Al final una voz le dira su respuesta o directamente la puede leer :)</h3>
         <form action="/respuesta" method="post" enctype="multipart/form-data">
 
             <label for="image">Selecciona una imagen:</label>

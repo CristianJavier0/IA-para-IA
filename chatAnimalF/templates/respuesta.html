@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Respuesta del modelo</title>
+    <title>Respuesta de la IA CHUPAPI</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: monospace;
             background: #aaa6a6;
             padding: 2rem;
             display: flex;
@@ -28,9 +28,9 @@
             font-size: 1.1rem;
             color: #ffffff;
             border-left: 4px solid #d80286;
-            box-shadow: 0 0 15px rgb(216, 2, 134, 1);
             padding-left: 1rem;
             margin-bottom: 1rem;
+            margin-top: 10px;
         }
         a {
             display: block;
@@ -50,7 +50,6 @@
             background-color: #000000;
             padding: 8px;
             transition: box-shadow 0.3s ease, transform 0.2s ease;
-            color: #d80286;
         }
 
         audio:hover {
@@ -61,13 +60,14 @@
 </head>
 <body>
     <div class="container">
-        <h1>Respuesta del modelo</h1>
-        <div class="answer">{{ answer }}</div>
-
+        <h1>Respuesta de CHUPAPI fue: </h1>       
+        
         <audio controls>
             <source src="{{ audio_url }}" type="audio/wav" />
             Tu navegador no soporta el elemento de audio.
         </audio>
+
+        <div class="answer">{{ answer }}</div>
 
         <a href="/">← Hacer otra pregunta</a>
 
